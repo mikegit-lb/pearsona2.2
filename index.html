@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A2/B1 Final Exam Vocabulary Bank: 250+ Words</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --ink: #172033;
+      --muted: #657083;
+      --primary: #315fbd;
+      --primary-dark: #1f3f8f;
+      --soft: #e8efff;
+      --gold: #f4b942;
+      --green: #3d9b72;
+      --red: #c94c4c;
+      --purple: #7456d9;
+      --border: #d9e1ef;
+      --shadow: 0 10px 30px rgba(23,32,51,.08);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    header {
+      background: linear-gradient(135deg, #172033, #315fbd);
+      color: white;
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: -1px;
+    }
+
+    header p {
+      max-width: 980px;
+      margin: 14px auto 0;
+      font-size: 1.08rem;
+      opacity: .95;
+    }
+
+    main {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 28px 20px 70px;
+    }
+
+    .toolbar {
+      max-width: 1240px;
+      margin: -34px auto 24px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 230px 170px 170px;
+      gap: 12px;
+    }
+
+    input, select, button, textarea {
+      font: inherit;
+    }
+
+    .toolbar input,
+    .toolbar select,
+    .toolbar button {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 13px 15px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: 800;
+      border: none;
+      border-radius: 14px;
+      padding: 12px 15px;
+      background: var(--primary);
+      color: white;
+    }
+
+    button.secondary { background: var(--primary-dark); }
+    button.gold { background: var(--gold); color: #2b2100; }
+    button.green { background: var(--green); }
+    button.red { background: var(--red); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat .num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .stat .label {
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    h2 {
+      margin-top: 38px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 span {
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+    }
+
+    .note {
+      border-left: 7px solid var(--gold);
+      background: #fffaf0;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+    }
+
+    th {
+      background: #172033;
+      color: white;
+      text-align: left;
+      padding: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tr:hover td {
+      background: #f8faff;
+    }
+
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: .78rem;
+      font-weight: 900;
+      background: var(--soft);
+      color: var(--primary);
+      margin: 2px;
+      white-space: nowrap;
+    }
+
+    .b1 { background: #f0ecff; color: var(--purple); }
+    .pos { background: #eef8f3; color: var(--green); }
+    .category-list {
+      columns: 2;
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .flashcard {
+      min-height: 230px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff, #f7f4ff);
+    }
+
+    .flash-word {
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 900;
+      color: var(--primary-dark);
+    }
+
+    .flash-meta {
+      margin-top: 8px;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .hidden-meaning {
+      filter: blur(8px);
+      user-select: none;
+      transition: .2s;
+    }
+
+    .hidden-meaning.show {
+      filter: blur(0);
+    }
+
+    .exercise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .question {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      background: #fbfcff;
+      margin: 10px 0;
+    }
+
+    details {
+      margin-top: 12px;
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--primary);
+    }
+
+    .quiz-options label {
+      display: block;
+      padding: 6px 0;
+    }
+
+    .score {
+      margin-top: 12px;
+      padding: 14px;
+      border-radius: 14px;
+      background: #172033;
+      color: white;
+      font-weight: 900;
+    }
+
+    .progress-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin: 12px 0;
+    }
+
+    .progress-track {
+      height: 16px;
+      background: #e5ebf5;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), #73c69e);
+      transition: width .2s;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 130px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+      background: white;
+    }
+
+    .print-note {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: white;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 960px) {
+      .toolbar, .grid, .exercise-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-list { columns: 1; }
+    }
+
+    @media print {
+      header {
+        background: white;
+        color: black;
+        padding: 20px;
+      }
+      .toolbar, .no-print {
+        display: none !important;
+      }
+      body {
+        background: white;
+      }
+      .card, .table-wrap {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+      th {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>A2/B1 Final Exam Vocabulary Bank</h1>
+    <p>
+      A standalone interactive HTML vocabulary file with <strong>543 words and phrases</strong>
+      grouped by the course topics: personal information, routines, home, food, school, appearance,
+      arts, city life, technology, health, nature, life skills, collocations, phrasal verbs, and exam language.
+    </p>
+  </header>
+
+  <div class="toolbar no-print">
+    <input id="searchInput" type="text" placeholder="Search word, Turkish meaning, topic, part of speech..." />
+    <select id="categoryFilter"><option value="all">All topics</option></select>
+    <select id="levelFilter">
+      <option value="all">All levels</option>
+      <option value="A2">A2 only</option>
+      <option value="B1">B1 only</option>
+    </select>
+    <button class="gold" onclick="window.print()">Print / Save PDF</button>
+  </div>
+
+  <main>
+    <section class="grid">
+      <div class="card stat">
+        <div class="num" id="totalWords">543</div>
+        <div class="label">Total words & phrases</div>
+      </div>
+      <div class="card stat">
+        <div class="num" id="visibleWords">543</div>
+        <div class="label">Visible after filter</div>
+      </div>
+      <div class="card stat">
+        <div class="num" id="learnedCount">0</div>
+        <div class="label">Marked as learned</div>
+      </div>
+      <div class="card stat">
+        <div class="num" id="b1Count">0</div>
+        <div class="label">B1 bridge items</div>
+      </div>
+    </section>
+
+    <section class="card note">
+      <h2 style="margin-top:0;"><span>!</span>Teacher Use</h2>
+      <p>
+        This vocabulary bank is designed for a final exam review cycle. It does not only include easy nouns.
+        It includes the harder items students usually lose marks on: phrasal verbs, verb-preposition patterns,
+        make/do collocations, get collocations, clothing verbs, quantifier vocabulary, life skills language,
+        and Internet-safety vocabulary.
+      </p>
+      <ul class="category-list" id="categoryList"></ul>
+    </section>
+
+    <section class="card no-print">
+      <h2 style="margin-top:0;"><span>⚡</span>Study Progress</h2>
+      <div class="progress-row">
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+        <strong id="progressText">0%</strong>
+      </div>
+      <p class="print-note">Tick words in the table to mark them as learned. Progress is saved in this browser.</p>
+    </section>
+
+    <section>
+      <h2><span>1</span>Complete Vocabulary Table</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="no-print">Learned</th>
+              <th>Word / Phrase</th>
+              <th>Part of Speech</th>
+              <th>Level</th>
+              <th>Turkish Meaning</th>
+              <th>Topic</th>
+            </tr>
+          </thead>
+          <tbody id="vocabTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="no-print">
+      <h2><span>2</span>Flashcard Study Mode</h2>
+      <div class="card flashcard">
+        <div>
+          <div class="flash-word" id="flashWord">Click “New Card”</div>
+          <div class="flash-meta" id="flashMeta">Use this for fast revision.</div>
+          <h3 id="flashMeaning" class="hidden-meaning">Meaning appears here</h3>
+          <div style="margin-top:18px;">
+            <button onclick="newCard()">New Card</button>
+            <button class="secondary" onclick="revealMeaning()">Reveal Meaning</button>
+            <button class="green" onclick="markCurrentLearned()">Mark Learned</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="no-print">
+      <h2><span>3</span>Instant Translation Quiz</h2>
+      <div class="card">
+        <p>
+          This creates a random 15-question quiz from the vocabulary bank. It is useful for fast final-exam revision.
+        </p>
+        <div id="quizBox"></div>
+        <button onclick="buildQuiz()">New Random Quiz</button>
+        <button class="green" onclick="checkQuiz()">Check Quiz</button>
+        <div class="score" id="quizScore">Quiz score will appear here.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>4</span>Hard Final-Exam Gap-Fill Practice</h2>
+      <div class="card">
+        <p>
+          Complete the sentences. These questions focus on common A2/B1 final-exam traps.
+        </p>
+        <div class="exercise-grid">
+          <div class="question"><strong>1.</strong> She usually <strong>_____</strong> her phone before breakfast, but today she is studying.<br><em>Focus: Present Simple routine</em></div><div class="question"><strong>2.</strong> There aren&#x27;t <strong>_____</strong> chairs in the classroom, so some students are standing.<br><em>Focus: there are + any</em></div><div class="question"><strong>3.</strong> This soup has <strong>_____</strong> salt. I can&#x27;t eat it.<br><em>Focus: uncountable quantifier</em></div><div class="question"><strong>4.</strong> We have only <strong>_____</strong> eggs, so let&#x27;s make a small omelette.<br><em>Focus: countable quantifier</em></div><div class="question"><strong>5.</strong> My jacket doesn&#x27;t <strong>_____</strong> these trousers. The colours are very different.<br><em>Focus: clothes vocabulary</em></div><div class="question"><strong>6.</strong> This bag isn&#x27;t big <strong>_____</strong> for all my books.<br><em>Focus: too/enough</em></div><div class="question"><strong>7.</strong> You <strong>_____</strong> use your phone during the final exam. It is against the rules.<br><em>Focus: rules/prohibition</em></div><div class="question"><strong>8.</strong> I have already <strong>_____</strong> the tickets for the school trip.<br><em>Focus: travel expression</em></div><div class="question"><strong>9.</strong> Have you ever <strong>_____</strong> a wild animal in nature?<br><em>Focus: Present Perfect</em></div><div class="question"><strong>10.</strong> We are <strong>_____</strong> to visit the science museum next Saturday.<br><em>Focus: future plan</em></div><div class="question"><strong>11.</strong> He speaks very <strong>_____</strong> because he practises every day.<br><em>Focus: adverb of manner</em></div><div class="question"><strong>12.</strong> You should <strong>_____</strong> notes during the lesson, not only listen.<br><em>Focus: education collocation</em></div><div class="question"><strong>13.</strong> Please <strong>_____</strong> the lights when you leave the room.<br><em>Focus: phrasal verb</em></div><div class="question"><strong>14.</strong> I need to <strong>_____</strong> for my keys. I can&#x27;t find them anywhere.<br><em>Focus: look for</em></div><div class="question"><strong>15.</strong> The hotel is <strong>_____</strong> the bank and the cinema.<br><em>Focus: preposition of place</em></div><div class="question"><strong>16.</strong> Our team made good <strong>_____</strong> this month.<br><em>Focus: make progress</em></div><div class="question"><strong>17.</strong> The plane will <strong>_____</strong> off at 8:30.<br><em>Focus: travel phrasal verb</em></div><div class="question"><strong>18.</strong> Don&#x27;t <strong>_____</strong> personal information with strangers online.<br><em>Focus: internet safety</em></div><div class="question"><strong>19.</strong> The river is polluted, so people should <strong>_____</strong> it.<br><em>Focus: environment</em></div><div class="question"><strong>20.</strong> Mia is very <strong>_____</strong>. She always asks interesting questions.<br><em>Focus: personality adjective</em></div>
+        </div>
+        <details>
+          <summary>Answer Key</summary>
+          <ol>
+            <li><strong>checks</strong> — Present Simple routine</li><li><strong>any</strong> — there are + any</li><li><strong>too much</strong> — uncountable quantifier</li><li><strong>a few</strong> — countable quantifier</li><li><strong>match</strong> — clothes vocabulary</li><li><strong>enough</strong> — too/enough</li><li><strong>mustn&#x27;t</strong> — rules/prohibition</li><li><strong>booked</strong> — travel expression</li><li><strong>seen</strong> — Present Perfect</li><li><strong>going</strong> — future plan</li><li><strong>well</strong> — adverb of manner</li><li><strong>take</strong> — education collocation</li><li><strong>turn off</strong> — phrasal verb</li><li><strong>look</strong> — look for</li><li><strong>between</strong> — preposition of place</li><li><strong>progress</strong> — make progress</li><li><strong>take</strong> — travel phrasal verb</li><li><strong>share</strong> — internet safety</li><li><strong>protect</strong> — environment</li><li><strong>curious</strong> — personality adjective</li>
+          </ol>
+        </details>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>5</span>Speaking Cards</h2>
+      <div class="exercise-grid">
+        <div class="card"><strong>Speaking Card 1</strong><p>Describe your daily routine and explain what you are doing differently this week.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 2</strong><p>Compare eating at home and eating out. Use at least five food/container words.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 3</strong><p>Describe your bedroom or classroom using there is/there are and prepositions of place.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 4</strong><p>Talk about a school project you did. Use Past Simple and at least three education collocations.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 5</strong><p>Describe two people you know. Compare their appearance and personality.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 6</strong><p>Talk about a film, song, painting, or performance you like. Use opinion adjectives.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 7</strong><p>Give directions from your school to a place in town. Use transport and city vocabulary.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 8</strong><p>Talk about technology in your life. Use gadgets, computer equipment, and will for predictions.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 9</strong><p>Give health advice to a stressed student. Use should, must, have to, and body/health vocabulary.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div><div class="card"><strong>Speaking Card 10</strong><p>Talk about nature and animals. Use Present Perfect with ever, never, already, just, or yet.</p><p><em>Challenge:</em> Use at least 8 words from the vocabulary bank.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2><span>6</span>Writing Tasks</h2>
+      <div class="exercise-grid">
+        <div class="card"><strong>Writing Task 1</strong><p>Write 120–150 words about a school project. Use Past Simple, Present Perfect, one comparison, and five topic words.</p><textarea placeholder="Student writing area..."></textarea></div><div class="card"><strong>Writing Task 2</strong><p>Write an email to a friend about your weekend plans in the city. Use going to, Present Continuous for future, and travel expressions.</p><textarea placeholder="Student writing area..."></textarea></div><div class="card"><strong>Writing Task 3</strong><p>Write a paragraph comparing your home with your ideal home. Use furniture, house adjectives, there is/are, and comparatives.</p><textarea placeholder="Student writing area..."></textarea></div><div class="card"><strong>Writing Task 4</strong><p>Write exam advice for a younger student. Use should, must/mustn&#x27;t, have to/don&#x27;t have to, and life skills vocabulary.</p><textarea placeholder="Student writing area..."></textarea></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    A2/B1 Final Exam Vocabulary Bank · Standalone HTML · 543 vocabulary items
+  </footer>
+
+  <script>
+    const vocab = [{"category": "0A Countries, Nationalities & Personal Information", "word": "country", "pos": "noun", "level": "A2", "tr": "ülke"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "nationality", "pos": "noun", "level": "A2", "tr": "milliyet"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "language", "pos": "noun", "level": "A2", "tr": "dil"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Turkish", "pos": "adj/noun", "level": "A2", "tr": "Türk / Türkçe"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "German", "pos": "adj/noun", "level": "A2", "tr": "Alman / Almanca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "French", "pos": "adj/noun", "level": "A2", "tr": "Fransız / Fransızca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Spanish", "pos": "adj/noun", "level": "A2", "tr": "İspanyol / İspanyolca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Italian", "pos": "adj/noun", "level": "A2", "tr": "İtalyan / İtalyanca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Brazilian", "pos": "adj/noun", "level": "A2", "tr": "Brezilyalı"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Chinese", "pos": "adj/noun", "level": "A2", "tr": "Çinli / Çince"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Japanese", "pos": "adj/noun", "level": "A2", "tr": "Japon / Japonca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Russian", "pos": "adj/noun", "level": "A2", "tr": "Rus / Rusça"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "British", "pos": "adj/noun", "level": "A2", "tr": "Britanyalı / İngiliz"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "American", "pos": "adj/noun", "level": "A2", "tr": "Amerikalı"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Canadian", "pos": "adj/noun", "level": "A2", "tr": "Kanadalı"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Egyptian", "pos": "adj/noun", "level": "A2", "tr": "Mısırlı"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "Greek", "pos": "adj/noun", "level": "A2", "tr": "Yunan / Yunanca"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "address", "pos": "noun", "level": "A2", "tr": "adres"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "surname", "pos": "noun", "level": "A2", "tr": "soyadı"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "first name", "pos": "noun", "level": "B1", "tr": "ad"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "spell", "pos": "verb", "level": "A2", "tr": "hecelemek"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "email address", "pos": "noun", "level": "B1", "tr": "e-posta adresi"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "phone number", "pos": "noun", "level": "B1", "tr": "telefon numarası"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "postcode", "pos": "noun", "level": "A2", "tr": "posta kodu"}, {"category": "0A Countries, Nationalities & Personal Information", "word": "date of birth", "pos": "noun phrase", "level": "B1", "tr": "doğum tarihi"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "backpack", "pos": "noun", "level": "A2", "tr": "sırt çantası"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "suitcase", "pos": "noun", "level": "A2", "tr": "bavul"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "wallet", "pos": "noun", "level": "A2", "tr": "cüzdan"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "key", "pos": "noun", "level": "A2", "tr": "anahtar"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "headphones", "pos": "noun", "level": "A2", "tr": "kulaklık"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "charger", "pos": "noun", "level": "A2", "tr": "şarj aleti"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "notebook", "pos": "noun", "level": "A2", "tr": "defter"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "tablet", "pos": "noun", "level": "A2", "tr": "tablet"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "ID card", "pos": "noun", "level": "B1", "tr": "kimlik kartı"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "umbrella", "pos": "noun", "level": "A2", "tr": "şemsiye"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "watch", "pos": "noun", "level": "A2", "tr": "saat"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "glasses", "pos": "noun", "level": "A2", "tr": "gözlük"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "scarf", "pos": "noun", "level": "A2", "tr": "atkı"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "cheap", "pos": "adjective", "level": "A2", "tr": "ucuz"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "expensive", "pos": "adjective", "level": "A2", "tr": "pahalı"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "heavy", "pos": "adjective", "level": "A2", "tr": "ağır"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "light", "pos": "adjective", "level": "A2", "tr": "hafif"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "useful", "pos": "adjective", "level": "A2", "tr": "faydalı"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "broken", "pos": "adjective", "level": "A2", "tr": "bozuk"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "new", "pos": "adjective", "level": "A2", "tr": "yeni"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "old", "pos": "adjective", "level": "A2", "tr": "eski / yaşlı"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "tidy", "pos": "adjective", "level": "A2", "tr": "düzenli"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "messy", "pos": "adjective", "level": "A2", "tr": "dağınık"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "comfortable", "pos": "adjective", "level": "A2", "tr": "rahat"}, {"category": "0B Personal Possessions & Basic Adjectives", "word": "special", "pos": "adjective", "level": "A2", "tr": "özel"}, {"category": "01 Daily Routines", "word": "wake up", "pos": "verb phrase", "level": "B1", "tr": "uyanmak"}, {"category": "01 Daily Routines", "word": "get up", "pos": "phrasal verb", "level": "B1", "tr": "yataktan kalkmak"}, {"category": "01 Daily Routines", "word": "get dressed", "pos": "verb phrase", "level": "B1", "tr": "giyinmek"}, {"category": "01 Daily Routines", "word": "brush your teeth", "pos": "verb phrase", "level": "B1", "tr": "dişlerini fırçalamak"}, {"category": "01 Daily Routines", "word": "have breakfast", "pos": "verb phrase", "level": "B1", "tr": "kahvaltı yapmak"}, {"category": "01 Daily Routines", "word": "leave home", "pos": "verb phrase", "level": "B1", "tr": "evden çıkmak"}, {"category": "01 Daily Routines", "word": "catch the bus", "pos": "verb phrase", "level": "B1", "tr": "otobüse yetişmek"}, {"category": "01 Daily Routines", "word": "start school", "pos": "verb phrase", "level": "B1", "tr": "okula başlamak"}, {"category": "01 Daily Routines", "word": "finish school", "pos": "verb phrase", "level": "B1", "tr": "okulu bitirmek"}, {"category": "01 Daily Routines", "word": "do homework", "pos": "collocation", "level": "B1", "tr": "ödev yapmak"}, {"category": "01 Daily Routines", "word": "have dinner", "pos": "verb phrase", "level": "B1", "tr": "akşam yemeği yemek"}, {"category": "01 Daily Routines", "word": "go to bed", "pos": "verb phrase", "level": "B1", "tr": "yatmak"}, {"category": "01 Daily Routines", "word": "take a shower", "pos": "verb phrase", "level": "B1", "tr": "duş almak"}, {"category": "01 Daily Routines", "word": "feed a pet", "pos": "verb phrase", "level": "B1", "tr": "evcil hayvan beslemek"}, {"category": "01 Daily Routines", "word": "check your phone", "pos": "verb phrase", "level": "B1", "tr": "telefonu kontrol etmek"}, {"category": "01 Daily Routines", "word": "text a friend", "pos": "verb phrase", "level": "B1", "tr": "arkadaşa mesaj atmak"}, {"category": "01 Daily Routines", "word": "arrive home", "pos": "verb phrase", "level": "B1", "tr": "eve varmak"}, {"category": "01 Daily Routines", "word": "relax", "pos": "verb", "level": "A2", "tr": "rahatlamak"}, {"category": "01 Daily Routines", "word": "prepare", "pos": "verb", "level": "A2", "tr": "hazırlanmak"}, {"category": "01 Daily Routines", "word": "daily routine", "pos": "noun phrase", "level": "B1", "tr": "günlük rutin"}, {"category": "01 Free Time & Frequency", "word": "play board games", "pos": "verb phrase", "level": "B1", "tr": "kutu oyunu oynamak"}, {"category": "01 Free Time & Frequency", "word": "go cycling", "pos": "verb phrase", "level": "B1", "tr": "bisiklete binmeye gitmek"}, {"category": "01 Free Time & Frequency", "word": "hang out", "pos": "phrasal verb", "level": "B1", "tr": "takılmak"}, {"category": "01 Free Time & Frequency", "word": "listen to music", "pos": "verb phrase", "level": "B1", "tr": "müzik dinlemek"}, {"category": "01 Free Time & Frequency", "word": "watch a series", "pos": "verb phrase", "level": "B1", "tr": "dizi izlemek"}, {"category": "01 Free Time & Frequency", "word": "surf the Internet", "pos": "verb phrase", "level": "B1", "tr": "internette gezinmek"}, {"category": "01 Free Time & Frequency", "word": "read comics", "pos": "verb phrase", "level": "B1", "tr": "çizgi roman okumak"}, {"category": "01 Free Time & Frequency", "word": "draw", "pos": "verb", "level": "A2", "tr": "çizmek"}, {"category": "01 Free Time & Frequency", "word": "practise", "pos": "verb", "level": "A2", "tr": "pratik yapmak"}, {"category": "01 Free Time & Frequency", "word": "train", "pos": "verb", "level": "A2", "tr": "antrenman yapmak"}, {"category": "01 Free Time & Frequency", "word": "often", "pos": "adverb", "level": "A2", "tr": "sık sık"}, {"category": "01 Free Time & Frequency", "word": "usually", "pos": "adverb", "level": "A2", "tr": "genellikle"}, {"category": "01 Free Time & Frequency", "word": "sometimes", "pos": "adverb", "level": "A2", "tr": "bazen"}, {"category": "01 Free Time & Frequency", "word": "rarely", "pos": "adverb", "level": "A2", "tr": "nadiren"}, {"category": "01 Free Time & Frequency", "word": "never", "pos": "adverb", "level": "A2", "tr": "asla"}, {"category": "01 Free Time & Frequency", "word": "once a week", "pos": "frequency phrase", "level": "B1", "tr": "haftada bir kez"}, {"category": "01 Free Time & Frequency", "word": "twice a month", "pos": "frequency phrase", "level": "B1", "tr": "ayda iki kez"}, {"category": "01 Free Time & Frequency", "word": "every day", "pos": "frequency phrase", "level": "B1", "tr": "her gün"}, {"category": "01 Free Time & Frequency", "word": "at weekends", "pos": "time phrase", "level": "B1", "tr": "hafta sonları"}, {"category": "01 Free Time & Frequency", "word": "in my free time", "pos": "phrase", "level": "B1", "tr": "boş zamanımda"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "look after", "pos": "phrasal verb", "level": "B1", "tr": "bakmak / ilgilenmek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "look for", "pos": "phrasal verb", "level": "B1", "tr": "aramak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "turn on", "pos": "phrasal verb", "level": "B1", "tr": "açmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "turn off", "pos": "phrasal verb", "level": "B1", "tr": "kapatmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "put on", "pos": "phrasal verb", "level": "B1", "tr": "giymek / takmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "take off", "pos": "phrasal verb", "level": "B1", "tr": "çıkarmak / kalkış yapmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "clean up", "pos": "phrasal verb", "level": "B1", "tr": "temizlemek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "pick up", "pos": "phrasal verb", "level": "B1", "tr": "almak / toplamak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "give back", "pos": "phrasal verb", "level": "B1", "tr": "geri vermek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "listen to", "pos": "verb + prep", "level": "B1", "tr": "dinlemek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "wait for", "pos": "verb + prep", "level": "B1", "tr": "beklemek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "talk about", "pos": "verb + prep", "level": "B1", "tr": "hakkında konuşmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "think about", "pos": "verb + prep", "level": "B1", "tr": "hakkında düşünmek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "depend on", "pos": "verb + prep", "level": "B1", "tr": "bağlı olmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "agree with", "pos": "verb + prep", "level": "B1", "tr": "katılmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "pay for", "pos": "verb + prep", "level": "B1", "tr": "ödemek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "ask for", "pos": "verb + prep", "level": "B1", "tr": "istemek / talep etmek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "belong to", "pos": "verb + prep", "level": "B1", "tr": "-e ait olmak"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "laugh at", "pos": "verb + prep", "level": "B1", "tr": "-e gülmek"}, {"category": "01 Phrasal Verbs & Verbs with Prepositions", "word": "worry about", "pos": "verb + prep", "level": "B1", "tr": "endişelenmek"}, {"category": "02 House, Rooms & Furniture", "word": "house", "pos": "noun", "level": "A2", "tr": "ev"}, {"category": "02 House, Rooms & Furniture", "word": "flat", "pos": "noun", "level": "A2", "tr": "apartman dairesi"}, {"category": "02 House, Rooms & Furniture", "word": "apartment", "pos": "noun", "level": "A2", "tr": "apartman dairesi"}, {"category": "02 House, Rooms & Furniture", "word": "balcony", "pos": "noun", "level": "A2", "tr": "balkon"}, {"category": "02 House, Rooms & Furniture", "word": "garden", "pos": "noun", "level": "A2", "tr": "bahçe"}, {"category": "02 House, Rooms & Furniture", "word": "garage", "pos": "noun", "level": "A2", "tr": "garaj"}, {"category": "02 House, Rooms & Furniture", "word": "kitchen", "pos": "noun", "level": "A2", "tr": "mutfak"}, {"category": "02 House, Rooms & Furniture", "word": "bathroom", "pos": "noun", "level": "A2", "tr": "banyo"}, {"category": "02 House, Rooms & Furniture", "word": "bedroom", "pos": "noun", "level": "A2", "tr": "yatak odası"}, {"category": "02 House, Rooms & Furniture", "word": "living room", "pos": "noun", "level": "B1", "tr": "oturma odası"}, {"category": "02 House, Rooms & Furniture", "word": "dining room", "pos": "noun", "level": "B1", "tr": "yemek odası"}, {"category": "02 House, Rooms & Furniture", "word": "hall", "pos": "noun", "level": "A2", "tr": "koridor / giriş"}, {"category": "02 House, Rooms & Furniture", "word": "roof", "pos": "noun", "level": "A2", "tr": "çatı"}, {"category": "02 House, Rooms & Furniture", "word": "wall", "pos": "noun", "level": "A2", "tr": "duvar"}, {"category": "02 House, Rooms & Furniture", "word": "floor", "pos": "noun", "level": "A2", "tr": "zemin / kat"}, {"category": "02 House, Rooms & Furniture", "word": "ceiling", "pos": "noun", "level": "A2", "tr": "tavan"}, {"category": "02 House, Rooms & Furniture", "word": "sofa", "pos": "noun", "level": "A2", "tr": "kanepe"}, {"category": "02 House, Rooms & Furniture", "word": "armchair", "pos": "noun", "level": "A2", "tr": "koltuk"}, {"category": "02 House, Rooms & Furniture", "word": "wardrobe", "pos": "noun", "level": "A2", "tr": "gardırop"}, {"category": "02 House, Rooms & Furniture", "word": "cupboard", "pos": "noun", "level": "A2", "tr": "dolap"}, {"category": "02 House, Rooms & Furniture", "word": "shelf", "pos": "noun", "level": "A2", "tr": "raf"}, {"category": "02 House, Rooms & Furniture", "word": "carpet", "pos": "noun", "level": "A2", "tr": "halı"}, {"category": "02 House, Rooms & Furniture", "word": "curtain", "pos": "noun", "level": "A2", "tr": "perde"}, {"category": "02 House, Rooms & Furniture", "word": "desk", "pos": "noun", "level": "A2", "tr": "çalışma masası"}, {"category": "02 House, Rooms & Furniture", "word": "mirror", "pos": "noun", "level": "A2", "tr": "ayna"}, {"category": "02 House, Rooms & Furniture", "word": "sink", "pos": "noun", "level": "A2", "tr": "lavabo"}, {"category": "02 House, Rooms & Furniture", "word": "fridge", "pos": "noun", "level": "A2", "tr": "buzdolabı"}, {"category": "02 House, Rooms & Furniture", "word": "oven", "pos": "noun", "level": "A2", "tr": "fırın"}, {"category": "02 House, Rooms & Furniture", "word": "drawer", "pos": "noun", "level": "A2", "tr": "çekmece"}, {"category": "02 House, Rooms & Furniture", "word": "lamp", "pos": "noun", "level": "A2", "tr": "lamba"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "wash the dishes", "pos": "verb phrase", "level": "B1", "tr": "bulaşıkları yıkamak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "take out the rubbish", "pos": "verb phrase", "level": "B1", "tr": "çöpü çıkarmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "vacuum", "pos": "verb", "level": "A2", "tr": "elektrikli süpürgeyle temizlemek"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "sweep", "pos": "verb", "level": "A2", "tr": "süpürmek"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "mop", "pos": "verb", "level": "A2", "tr": "paspas yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "dust", "pos": "verb", "level": "A2", "tr": "toz almak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "iron", "pos": "verb", "level": "A2", "tr": "ütü yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "tidy up", "pos": "phrasal verb", "level": "B1", "tr": "toparlamak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "make the bed", "pos": "collocation", "level": "B1", "tr": "yatağı toplamak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "do the laundry", "pos": "collocation", "level": "B1", "tr": "çamaşır yıkamak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "do the shopping", "pos": "collocation", "level": "B1", "tr": "alışveriş yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "make a mess", "pos": "collocation", "level": "B1", "tr": "ortalığı dağıtmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "make a plan", "pos": "collocation", "level": "B1", "tr": "plan yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "do exercise", "pos": "collocation", "level": "B1", "tr": "egzersiz yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "do a favour", "pos": "collocation", "level": "B1", "tr": "iyilik yapmak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "spacious", "pos": "adjective", "level": "A2", "tr": "geniş / ferah"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "cosy", "pos": "adjective", "level": "A2", "tr": "rahat / sıcak"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "modern", "pos": "adjective", "level": "A2", "tr": "modern"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "comfortable", "pos": "adjective", "level": "A2", "tr": "rahat"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "noisy", "pos": "adjective", "level": "A2", "tr": "gürültülü"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "quiet", "pos": "adjective", "level": "A2", "tr": "sessiz"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "bright", "pos": "adjective", "level": "A2", "tr": "aydınlık"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "dark", "pos": "adjective", "level": "A2", "tr": "karanlık"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "upstairs", "pos": "adverb", "level": "A2", "tr": "üst katta"}, {"category": "02 Chores, House Adjectives & Make/Do", "word": "downstairs", "pos": "adverb", "level": "A2", "tr": "alt katta"}, {"category": "03 Food & Drink", "word": "bread", "pos": "noun", "level": "A2", "tr": "ekmek"}, {"category": "03 Food & Drink", "word": "rice", "pos": "noun", "level": "A2", "tr": "pirinç / pilav"}, {"category": "03 Food & Drink", "word": "pasta", "pos": "noun", "level": "A2", "tr": "makarna"}, {"category": "03 Food & Drink", "word": "meat", "pos": "noun", "level": "A2", "tr": "et"}, {"category": "03 Food & Drink", "word": "chicken", "pos": "noun", "level": "A2", "tr": "tavuk"}, {"category": "03 Food & Drink", "word": "fish", "pos": "noun", "level": "A2", "tr": "balık"}, {"category": "03 Food & Drink", "word": "egg", "pos": "noun", "level": "A2", "tr": "yumurta"}, {"category": "03 Food & Drink", "word": "cheese", "pos": "noun", "level": "A2", "tr": "peynir"}, {"category": "03 Food & Drink", "word": "butter", "pos": "noun", "level": "A2", "tr": "tereyağı"}, {"category": "03 Food & Drink", "word": "yoghurt", "pos": "noun", "level": "A2", "tr": "yoğurt"}, {"category": "03 Food & Drink", "word": "cereal", "pos": "noun", "level": "A2", "tr": "kahvaltılık gevrek"}, {"category": "03 Food & Drink", "word": "fruit", "pos": "noun", "level": "A2", "tr": "meyve"}, {"category": "03 Food & Drink", "word": "vegetables", "pos": "noun", "level": "A2", "tr": "sebzeler"}, {"category": "03 Food & Drink", "word": "beans", "pos": "noun", "level": "A2", "tr": "fasulye"}, {"category": "03 Food & Drink", "word": "potatoes", "pos": "noun", "level": "A2", "tr": "patates"}, {"category": "03 Food & Drink", "word": "salad", "pos": "noun", "level": "A2", "tr": "salata"}, {"category": "03 Food & Drink", "word": "soup", "pos": "noun", "level": "A2", "tr": "çorba"}, {"category": "03 Food & Drink", "word": "sandwich", "pos": "noun", "level": "A2", "tr": "sandviç"}, {"category": "03 Food & Drink", "word": "dessert", "pos": "noun", "level": "A2", "tr": "tatlı"}, {"category": "03 Food & Drink", "word": "snack", "pos": "noun", "level": "A2", "tr": "atıştırmalık"}, {"category": "03 Food & Drink", "word": "juice", "pos": "noun", "level": "A2", "tr": "meyve suyu"}, {"category": "03 Food & Drink", "word": "lemonade", "pos": "noun", "level": "A2", "tr": "limonata"}, {"category": "03 Food & Drink", "word": "tea", "pos": "noun", "level": "A2", "tr": "çay"}, {"category": "03 Food & Drink", "word": "coffee", "pos": "noun", "level": "A2", "tr": "kahve"}, {"category": "03 Food & Drink", "word": "water", "pos": "noun", "level": "A2", "tr": "su"}, {"category": "03 Food & Drink", "word": "flour", "pos": "noun", "level": "A2", "tr": "un"}, {"category": "03 Food & Drink", "word": "sugar", "pos": "noun", "level": "A2", "tr": "şeker"}, {"category": "03 Food & Drink", "word": "salt", "pos": "noun", "level": "A2", "tr": "tuz"}, {"category": "03 Food & Drink", "word": "pepper", "pos": "noun", "level": "A2", "tr": "karabiber"}, {"category": "03 Food & Drink", "word": "oil", "pos": "noun", "level": "A2", "tr": "yağ"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "bottle", "pos": "noun", "level": "A2", "tr": "şişe"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "can", "pos": "noun", "level": "A2", "tr": "kutu"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "packet", "pos": "noun", "level": "A2", "tr": "paket"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "box", "pos": "noun", "level": "A2", "tr": "kutu"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "carton", "pos": "noun", "level": "A2", "tr": "karton kutu"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "jar", "pos": "noun", "level": "A2", "tr": "kavanoz"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "bowl", "pos": "noun", "level": "A2", "tr": "kase"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "plate", "pos": "noun", "level": "A2", "tr": "tabak"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "slice", "pos": "noun", "level": "A2", "tr": "dilim"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "loaf", "pos": "noun", "level": "A2", "tr": "somun"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "kilo", "pos": "noun", "level": "A2", "tr": "kilo"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "litre", "pos": "noun", "level": "A2", "tr": "litre"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "menu", "pos": "noun", "level": "A2", "tr": "menü"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "bill", "pos": "noun", "level": "A2", "tr": "hesap"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "tip", "pos": "noun", "level": "A2", "tr": "bahşiş"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "customer", "pos": "noun", "level": "A2", "tr": "müşteri"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "waiter", "pos": "noun", "level": "A2", "tr": "garson"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "chef", "pos": "noun", "level": "A2", "tr": "şef / aşçı"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "cashier", "pos": "noun", "level": "A2", "tr": "kasiyer"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "order", "pos": "verb/noun", "level": "A2", "tr": "sipariş vermek / sipariş"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "serve", "pos": "verb", "level": "A2", "tr": "servis etmek"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "cutlery", "pos": "noun", "level": "A2", "tr": "çatal bıçak takımı"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "fork", "pos": "noun", "level": "A2", "tr": "çatal"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "knife", "pos": "noun", "level": "A2", "tr": "bıçak"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "spoon", "pos": "noun", "level": "A2", "tr": "kaşık"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "chopsticks", "pos": "noun", "level": "A2", "tr": "yemek çubukları"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "napkin", "pos": "noun", "level": "A2", "tr": "peçete"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "dish", "pos": "noun", "level": "A2", "tr": "yemek / tabak"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "main course", "pos": "noun", "level": "B1", "tr": "ana yemek"}, {"category": "03 Containers, Prices, Restaurants & Cutlery", "word": "starter", "pos": "noun", "level": "A2", "tr": "başlangıç"}, {"category": "04 School Places, Subjects & Objects", "word": "classroom", "pos": "noun", "level": "A2", "tr": "sınıf"}, {"category": "04 School Places, Subjects & Objects", "word": "corridor", "pos": "noun", "level": "A2", "tr": "koridor"}, {"category": "04 School Places, Subjects & Objects", "word": "gym", "pos": "noun", "level": "A2", "tr": "spor salonu"}, {"category": "04 School Places, Subjects & Objects", "word": "library", "pos": "noun", "level": "A2", "tr": "kütüphane"}, {"category": "04 School Places, Subjects & Objects", "word": "lab", "pos": "noun", "level": "A2", "tr": "laboratuvar"}, {"category": "04 School Places, Subjects & Objects", "word": "playground", "pos": "noun", "level": "A2", "tr": "oyun alanı"}, {"category": "04 School Places, Subjects & Objects", "word": "canteen", "pos": "noun", "level": "A2", "tr": "kantin"}, {"category": "04 School Places, Subjects & Objects", "word": "subject", "pos": "noun", "level": "A2", "tr": "ders"}, {"category": "04 School Places, Subjects & Objects", "word": "maths", "pos": "noun", "level": "A2", "tr": "matematik"}, {"category": "04 School Places, Subjects & Objects", "word": "science", "pos": "noun", "level": "A2", "tr": "fen / bilim"}, {"category": "04 School Places, Subjects & Objects", "word": "history", "pos": "noun", "level": "A2", "tr": "tarih"}, {"category": "04 School Places, Subjects & Objects", "word": "geography", "pos": "noun", "level": "A2", "tr": "coğrafya"}, {"category": "04 School Places, Subjects & Objects", "word": "PE", "pos": "noun", "level": "A2", "tr": "beden eğitimi"}, {"category": "04 School Places, Subjects & Objects", "word": "art", "pos": "noun", "level": "A2", "tr": "resim / sanat"}, {"category": "04 School Places, Subjects & Objects", "word": "music", "pos": "noun", "level": "A2", "tr": "müzik"}, {"category": "04 School Places, Subjects & Objects", "word": "exam", "pos": "noun", "level": "A2", "tr": "sınav"}, {"category": "04 School Places, Subjects & Objects", "word": "test", "pos": "noun", "level": "A2", "tr": "test"}, {"category": "04 School Places, Subjects & Objects", "word": "mark", "pos": "noun", "level": "A2", "tr": "not / puan"}, {"category": "04 School Places, Subjects & Objects", "word": "grade", "pos": "noun", "level": "A2", "tr": "not / sınıf"}, {"category": "04 School Places, Subjects & Objects", "word": "timetable", "pos": "noun", "level": "A2", "tr": "ders programı"}, {"category": "04 School Places, Subjects & Objects", "word": "homework", "pos": "noun", "level": "A2", "tr": "ödev"}, {"category": "04 School Places, Subjects & Objects", "word": "project", "pos": "noun", "level": "A2", "tr": "proje"}, {"category": "04 School Places, Subjects & Objects", "word": "presentation", "pos": "noun", "level": "A2", "tr": "sunum"}, {"category": "04 School Places, Subjects & Objects", "word": "textbook", "pos": "noun", "level": "A2", "tr": "ders kitabı"}, {"category": "04 School Places, Subjects & Objects", "word": "dictionary", "pos": "noun", "level": "A2", "tr": "sözlük"}, {"category": "04 School Places, Subjects & Objects", "word": "pencil case", "pos": "noun", "level": "B1", "tr": "kalemlik"}, {"category": "04 School Places, Subjects & Objects", "word": "board", "pos": "noun", "level": "A2", "tr": "tahta"}, {"category": "04 School Places, Subjects & Objects", "word": "ruler", "pos": "noun", "level": "A2", "tr": "cetvel"}, {"category": "04 School Places, Subjects & Objects", "word": "calculator", "pos": "noun", "level": "A2", "tr": "hesap makinesi"}, {"category": "04 School Places, Subjects & Objects", "word": "scissors", "pos": "noun", "level": "A2", "tr": "makas"}, {"category": "04 Education Collocations & Adjectives", "word": "take notes", "pos": "collocation", "level": "B1", "tr": "not almak"}, {"category": "04 Education Collocations & Adjectives", "word": "hand in", "pos": "phrasal verb", "level": "B1", "tr": "teslim etmek"}, {"category": "04 Education Collocations & Adjectives", "word": "revise for", "pos": "verb + prep", "level": "B1", "tr": "sınava çalışmak"}, {"category": "04 Education Collocations & Adjectives", "word": "pass an exam", "pos": "collocation", "level": "B1", "tr": "sınavı geçmek"}, {"category": "04 Education Collocations & Adjectives", "word": "fail an exam", "pos": "collocation", "level": "B1", "tr": "sınavdan kalmak"}, {"category": "04 Education Collocations & Adjectives", "word": "get a good mark", "pos": "collocation", "level": "B1", "tr": "iyi not almak"}, {"category": "04 Education Collocations & Adjectives", "word": "make progress", "pos": "collocation", "level": "B1", "tr": "ilerleme kaydetmek"}, {"category": "04 Education Collocations & Adjectives", "word": "make mistakes", "pos": "collocation", "level": "B1", "tr": "hata yapmak"}, {"category": "04 Education Collocations & Adjectives", "word": "ask permission", "pos": "collocation", "level": "B1", "tr": "izin istemek"}, {"category": "04 Education Collocations & Adjectives", "word": "work in pairs", "pos": "collocation", "level": "B1", "tr": "ikili çalışmak"}, {"category": "04 Education Collocations & Adjectives", "word": "compulsory", "pos": "adjective", "level": "B1", "tr": "zorunlu"}, {"category": "04 Education Collocations & Adjectives", "word": "optional", "pos": "adjective", "level": "B1", "tr": "seçmeli"}, {"category": "04 Education Collocations & Adjectives", "word": "strict", "pos": "adjective", "level": "B1", "tr": "katı"}, {"category": "04 Education Collocations & Adjectives", "word": "fair", "pos": "adjective", "level": "B1", "tr": "adil"}, {"category": "04 Education Collocations & Adjectives", "word": "confident", "pos": "adjective", "level": "B1", "tr": "özgüvenli"}, {"category": "04 Education Collocations & Adjectives", "word": "nervous", "pos": "adjective", "level": "B1", "tr": "gergin"}, {"category": "04 Education Collocations & Adjectives", "word": "creative", "pos": "adjective", "level": "B1", "tr": "yaratıcı"}, {"category": "04 Education Collocations & Adjectives", "word": "careful", "pos": "adjective", "level": "B1", "tr": "dikkatli"}, {"category": "04 Education Collocations & Adjectives", "word": "independent", "pos": "adjective", "level": "B1", "tr": "bağımsız"}, {"category": "04 Education Collocations & Adjectives", "word": "responsible", "pos": "adjective", "level": "B1", "tr": "sorumlu"}, {"category": "05 Personality, Appearance & Clothes", "word": "friendly", "pos": "adjective", "level": "A2", "tr": "arkadaş canlısı"}, {"category": "05 Personality, Appearance & Clothes", "word": "kind", "pos": "adjective", "level": "A2", "tr": "nazik"}, {"category": "05 Personality, Appearance & Clothes", "word": "generous", "pos": "adjective", "level": "A2", "tr": "cömert"}, {"category": "05 Personality, Appearance & Clothes", "word": "honest", "pos": "adjective", "level": "A2", "tr": "dürüst"}, {"category": "05 Personality, Appearance & Clothes", "word": "shy", "pos": "adjective", "level": "A2", "tr": "utangaç"}, {"category": "05 Personality, Appearance & Clothes", "word": "outgoing", "pos": "adjective", "level": "A2", "tr": "sosyal / dışa dönük"}, {"category": "05 Personality, Appearance & Clothes", "word": "lazy", "pos": "adjective", "level": "A2", "tr": "tembel"}, {"category": "05 Personality, Appearance & Clothes", "word": "hardworking", "pos": "adjective", "level": "A2", "tr": "çalışkan"}, {"category": "05 Personality, Appearance & Clothes", "word": "patient", "pos": "adjective", "level": "A2", "tr": "sabırlı"}, {"category": "05 Personality, Appearance & Clothes", "word": "impatient", "pos": "adjective", "level": "A2", "tr": "sabırsız"}, {"category": "05 Personality, Appearance & Clothes", "word": "polite", "pos": "adjective", "level": "A2", "tr": "kibar"}, {"category": "05 Personality, Appearance & Clothes", "word": "rude", "pos": "adjective", "level": "A2", "tr": "kaba"}, {"category": "05 Personality, Appearance & Clothes", "word": "brave", "pos": "adjective", "level": "A2", "tr": "cesur"}, {"category": "05 Personality, Appearance & Clothes", "word": "careless", "pos": "adjective", "level": "A2", "tr": "dikkatsiz"}, {"category": "05 Personality, Appearance & Clothes", "word": "curly", "pos": "adjective", "level": "A2", "tr": "kıvırcık"}, {"category": "05 Personality, Appearance & Clothes", "word": "straight", "pos": "adjective", "level": "A2", "tr": "düz"}, {"category": "05 Personality, Appearance & Clothes", "word": "bald", "pos": "adjective", "level": "A2", "tr": "kel"}, {"category": "05 Personality, Appearance & Clothes", "word": "beard", "pos": "noun", "level": "A2", "tr": "sakal"}, {"category": "05 Personality, Appearance & Clothes", "word": "moustache", "pos": "noun", "level": "A2", "tr": "bıyık"}, {"category": "05 Personality, Appearance & Clothes", "word": "tall", "pos": "adjective", "level": "A2", "tr": "uzun"}, {"category": "05 Personality, Appearance & Clothes", "word": "slim", "pos": "adjective", "level": "A2", "tr": "ince"}, {"category": "05 Personality, Appearance & Clothes", "word": "medium-height", "pos": "adjective", "level": "A2", "tr": "orta boylu"}, {"category": "05 Personality, Appearance & Clothes", "word": "hoodie", "pos": "noun", "level": "A2", "tr": "kapüşonlu sweatshirt"}, {"category": "05 Personality, Appearance & Clothes", "word": "jacket", "pos": "noun", "level": "A2", "tr": "ceket"}, {"category": "05 Personality, Appearance & Clothes", "word": "trainers", "pos": "noun", "level": "A2", "tr": "spor ayakkabı"}, {"category": "05 Personality, Appearance & Clothes", "word": "tie", "pos": "noun", "level": "A2", "tr": "kravat"}, {"category": "05 Personality, Appearance & Clothes", "word": "suit", "pos": "noun", "level": "A2", "tr": "takım elbise"}, {"category": "05 Personality, Appearance & Clothes", "word": "dress", "pos": "noun", "level": "A2", "tr": "elbise"}, {"category": "05 Personality, Appearance & Clothes", "word": "skirt", "pos": "noun", "level": "A2", "tr": "etek"}, {"category": "05 Personality, Appearance & Clothes", "word": "boots", "pos": "noun", "level": "A2", "tr": "bot"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "fit", "pos": "verb", "level": "B1", "tr": "beden olarak uymak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "match", "pos": "verb", "level": "B1", "tr": "renk/desen olarak uymak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "suit", "pos": "verb", "level": "B1", "tr": "yakışmak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "go with", "pos": "phrasal verb", "level": "B1", "tr": "uyumlu olmak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "similar", "pos": "adjective", "level": "B1", "tr": "benzer"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "different", "pos": "adjective", "level": "B1", "tr": "farklı"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "alike", "pos": "adjective", "level": "B1", "tr": "benzer"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "unlike", "pos": "preposition", "level": "B1", "tr": "-den farklı olarak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "the same as", "pos": "phrase", "level": "B1", "tr": "ile aynı"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "as ... as", "pos": "structure", "level": "B1", "tr": "kadar ..."}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "both", "pos": "determiner", "level": "B1", "tr": "her ikisi"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "neither", "pos": "determiner", "level": "B1", "tr": "hiçbiri"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "while", "pos": "linker", "level": "B1", "tr": "-iken / buna karşın"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "however", "pos": "linker", "level": "B1", "tr": "ancak"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "whereas", "pos": "linker", "level": "B1", "tr": "oysa / halbuki"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "look like", "pos": "verb phrase", "level": "B1", "tr": "benzemek"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "in common", "pos": "phrase", "level": "B1", "tr": "ortak yön"}, {"category": "05 Fit, Match, Suit & Similarity/Difference", "word": "difference", "pos": "noun", "level": "B1", "tr": "fark"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "art", "pos": "noun", "level": "A2", "tr": "sanat"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "painting", "pos": "noun", "level": "A2", "tr": "resim / tablo"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "sculpture", "pos": "noun", "level": "A2", "tr": "heykel"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "gallery", "pos": "noun", "level": "A2", "tr": "galeri"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "museum", "pos": "noun", "level": "A2", "tr": "müze"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "artist", "pos": "noun", "level": "A2", "tr": "sanatçı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "actor", "pos": "noun", "level": "A2", "tr": "erkek oyuncu"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "actress", "pos": "noun", "level": "A2", "tr": "kadın oyuncu"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "director", "pos": "noun", "level": "A2", "tr": "yönetmen"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "musician", "pos": "noun", "level": "A2", "tr": "müzisyen"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "dancer", "pos": "noun", "level": "A2", "tr": "dansçı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "singer", "pos": "noun", "level": "A2", "tr": "şarkıcı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "writer", "pos": "noun", "level": "A2", "tr": "yazar"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "photographer", "pos": "noun", "level": "A2", "tr": "fotoğrafçı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "designer", "pos": "noun", "level": "A2", "tr": "tasarımcı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "stage", "pos": "noun", "level": "A2", "tr": "sahne"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "audience", "pos": "noun", "level": "A2", "tr": "seyirci"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "concert", "pos": "noun", "level": "A2", "tr": "konser"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "exhibition", "pos": "noun", "level": "A2", "tr": "sergi"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "cartoon", "pos": "noun", "level": "A2", "tr": "çizgi film"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "comedy", "pos": "noun", "level": "A2", "tr": "komedi"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "drama", "pos": "noun", "level": "A2", "tr": "dram"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "documentary", "pos": "noun", "level": "A2", "tr": "belgesel"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "horror film", "pos": "noun", "level": "B1", "tr": "korku filmi"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "science fiction", "pos": "noun", "level": "B1", "tr": "bilim kurgu"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "exciting", "pos": "adjective", "level": "A2", "tr": "heyecan verici"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "boring", "pos": "adjective", "level": "A2", "tr": "sıkıcı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "amazing", "pos": "adjective", "level": "A2", "tr": "şaşırtıcı / harika"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "awful", "pos": "adjective", "level": "A2", "tr": "berbat"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "brilliant", "pos": "adjective", "level": "A2", "tr": "mükemmel"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "creative", "pos": "adjective", "level": "A2", "tr": "yaratıcı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "ordinary", "pos": "adjective", "level": "A2", "tr": "sıradan"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "entertaining", "pos": "adjective", "level": "A2", "tr": "eğlenceli"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "moving", "pos": "adjective", "level": "A2", "tr": "duygulandırıcı"}, {"category": "06 Arts, Films & Opinion Adjectives", "word": "popular", "pos": "adjective", "level": "A2", "tr": "popüler"}, {"category": "06 Collocations with Get", "word": "get ready", "pos": "collocation", "level": "B1", "tr": "hazırlanmak"}, {"category": "06 Collocations with Get", "word": "get dressed", "pos": "collocation", "level": "B1", "tr": "giyinmek"}, {"category": "06 Collocations with Get", "word": "get home", "pos": "collocation", "level": "B1", "tr": "eve varmak"}, {"category": "06 Collocations with Get", "word": "get lost", "pos": "collocation", "level": "B1", "tr": "kaybolmak"}, {"category": "06 Collocations with Get", "word": "get better", "pos": "collocation", "level": "B1", "tr": "iyileşmek / daha iyi olmak"}, {"category": "06 Collocations with Get", "word": "get worse", "pos": "collocation", "level": "B1", "tr": "kötüleşmek"}, {"category": "06 Collocations with Get", "word": "get angry", "pos": "collocation", "level": "B1", "tr": "sinirlenmek"}, {"category": "06 Collocations with Get", "word": "get tired", "pos": "collocation", "level": "B1", "tr": "yorulmak"}, {"category": "06 Collocations with Get", "word": "get a message", "pos": "collocation", "level": "B1", "tr": "mesaj almak"}, {"category": "06 Collocations with Get", "word": "get a ticket", "pos": "collocation", "level": "B1", "tr": "bilet almak"}, {"category": "06 Collocations with Get", "word": "get good marks", "pos": "collocation", "level": "B1", "tr": "iyi notlar almak"}, {"category": "06 Collocations with Get", "word": "get on well with", "pos": "phrase", "level": "B1", "tr": "iyi geçinmek"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "city centre", "pos": "noun", "level": "B1", "tr": "şehir merkezi"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "square", "pos": "noun", "level": "A2", "tr": "meydan"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "market", "pos": "noun", "level": "A2", "tr": "pazar"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "shopping centre", "pos": "noun", "level": "B1", "tr": "alışveriş merkezi"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "stadium", "pos": "noun", "level": "A2", "tr": "stadyum"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "station", "pos": "noun", "level": "A2", "tr": "istasyon"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "bus stop", "pos": "noun", "level": "B1", "tr": "otobüs durağı"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "airport", "pos": "noun", "level": "A2", "tr": "havaalanı"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "bridge", "pos": "noun", "level": "A2", "tr": "köprü"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "traffic lights", "pos": "noun", "level": "B1", "tr": "trafik lambası"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "pavement", "pos": "noun", "level": "A2", "tr": "kaldırım"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "crossing", "pos": "noun", "level": "A2", "tr": "yaya geçidi"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "taxi", "pos": "noun", "level": "A2", "tr": "taksi"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "tram", "pos": "noun", "level": "A2", "tr": "tramvay"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "underground", "pos": "noun", "level": "A2", "tr": "metro"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "ferry", "pos": "noun", "level": "A2", "tr": "feribot"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "bike lane", "pos": "noun", "level": "B1", "tr": "bisiklet yolu"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "turn left", "pos": "phrase", "level": "B1", "tr": "sola dön"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "turn right", "pos": "phrase", "level": "B1", "tr": "sağa dön"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "go straight on", "pos": "phrase", "level": "B1", "tr": "düz git"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "get lost", "pos": "verb phrase", "level": "B1", "tr": "kaybolmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "ask for directions", "pos": "phrase", "level": "B1", "tr": "yol tarifi istemek"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "book tickets", "pos": "verb phrase", "level": "B1", "tr": "bilet ayırtmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "pack a suitcase", "pos": "verb phrase", "level": "B1", "tr": "bavul hazırlamak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "check in", "pos": "phrasal verb", "level": "B1", "tr": "giriş yapmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "take off", "pos": "phrasal verb", "level": "B1", "tr": "kalkış yapmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "arrive", "pos": "verb", "level": "A2", "tr": "varmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "depart", "pos": "verb", "level": "A2", "tr": "ayrılmak / kalkmak"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "journey", "pos": "noun", "level": "A2", "tr": "yolculuk"}, {"category": "07 City Places, Transport & Travel Expressions", "word": "platform", "pos": "noun", "level": "A2", "tr": "peron"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "gadget", "pos": "noun", "level": "A2", "tr": "teknolojik alet"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "smartphone", "pos": "noun", "level": "A2", "tr": "akıllı telefon"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "laptop", "pos": "noun", "level": "A2", "tr": "dizüstü bilgisayar"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "tablet", "pos": "noun", "level": "A2", "tr": "tablet"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "keyboard", "pos": "noun", "level": "A2", "tr": "klavye"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "mouse", "pos": "noun", "level": "A2", "tr": "fare"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "screen", "pos": "noun", "level": "A2", "tr": "ekran"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "printer", "pos": "noun", "level": "A2", "tr": "yazıcı"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "charger", "pos": "noun", "level": "A2", "tr": "şarj aleti"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "headphones", "pos": "noun", "level": "A2", "tr": "kulaklık"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "app", "pos": "noun", "level": "A2", "tr": "uygulama"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "website", "pos": "noun", "level": "A2", "tr": "web sitesi"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "password", "pos": "noun", "level": "A2", "tr": "şifre"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "online", "pos": "adjective/adverb", "level": "A2", "tr": "çevrim içi"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "download", "pos": "verb", "level": "A2", "tr": "indirmek"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "upload", "pos": "verb", "level": "A2", "tr": "yüklemek"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "save", "pos": "verb", "level": "A2", "tr": "kaydetmek"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "delete", "pos": "verb", "level": "A2", "tr": "silmek"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "click", "pos": "verb", "level": "A2", "tr": "tıklamak"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "search engine", "pos": "noun", "level": "B1", "tr": "arama motoru"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "robot", "pos": "noun", "level": "A2", "tr": "robot"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "experiment", "pos": "noun", "level": "A2", "tr": "deney"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "invention", "pos": "noun", "level": "A2", "tr": "icat"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "discovery", "pos": "noun", "level": "A2", "tr": "keşif"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "planet", "pos": "noun", "level": "A2", "tr": "gezegen"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "energy", "pos": "noun", "level": "A2", "tr": "enerji"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "machine", "pos": "noun", "level": "A2", "tr": "makine"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "engineer", "pos": "noun", "level": "A2", "tr": "mühendis"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "research", "pos": "noun/verb", "level": "A2", "tr": "araştırma / araştırmak"}, {"category": "08 Gadgets, Computer Equipment & Science", "word": "data", "pos": "noun", "level": "A2", "tr": "veri"}, {"category": "08 Feelings & Adverbs of Manner", "word": "worried", "pos": "adjective", "level": "A2", "tr": "endişeli"}, {"category": "08 Feelings & Adverbs of Manner", "word": "relaxed", "pos": "adjective", "level": "A2", "tr": "rahatlamış"}, {"category": "08 Feelings & Adverbs of Manner", "word": "embarrassed", "pos": "adjective", "level": "A2", "tr": "utanmış"}, {"category": "08 Feelings & Adverbs of Manner", "word": "proud", "pos": "adjective", "level": "A2", "tr": "gururlu"}, {"category": "08 Feelings & Adverbs of Manner", "word": "disappointed", "pos": "adjective", "level": "A2", "tr": "hayal kırıklığına uğramış"}, {"category": "08 Feelings & Adverbs of Manner", "word": "confused", "pos": "adjective", "level": "A2", "tr": "kafası karışmış"}, {"category": "08 Feelings & Adverbs of Manner", "word": "excited", "pos": "adjective", "level": "A2", "tr": "heyecanlı"}, {"category": "08 Feelings & Adverbs of Manner", "word": "surprised", "pos": "adjective", "level": "A2", "tr": "şaşırmış"}, {"category": "08 Feelings & Adverbs of Manner", "word": "angry", "pos": "adjective", "level": "A2", "tr": "kızgın"}, {"category": "08 Feelings & Adverbs of Manner", "word": "calm", "pos": "adjective", "level": "A2", "tr": "sakin"}, {"category": "08 Feelings & Adverbs of Manner", "word": "carefully", "pos": "adverb", "level": "A2", "tr": "dikkatlice"}, {"category": "08 Feelings & Adverbs of Manner", "word": "quickly", "pos": "adverb", "level": "A2", "tr": "hızlıca"}, {"category": "08 Feelings & Adverbs of Manner", "word": "slowly", "pos": "adverb", "level": "A2", "tr": "yavaşça"}, {"category": "08 Feelings & Adverbs of Manner", "word": "quietly", "pos": "adverb", "level": "A2", "tr": "sessizce"}, {"category": "08 Feelings & Adverbs of Manner", "word": "loudly", "pos": "adverb", "level": "A2", "tr": "yüksek sesle"}, {"category": "08 Feelings & Adverbs of Manner", "word": "politely", "pos": "adverb", "level": "A2", "tr": "kibarca"}, {"category": "08 Feelings & Adverbs of Manner", "word": "badly", "pos": "adverb", "level": "A2", "tr": "kötü şekilde"}, {"category": "08 Feelings & Adverbs of Manner", "word": "well", "pos": "adverb", "level": "A2", "tr": "iyi şekilde"}, {"category": "09 Sports, Equipment, Body & Health", "word": "football", "pos": "noun", "level": "A2", "tr": "futbol"}, {"category": "09 Sports, Equipment, Body & Health", "word": "basketball", "pos": "noun", "level": "A2", "tr": "basketbol"}, {"category": "09 Sports, Equipment, Body & Health", "word": "volleyball", "pos": "noun", "level": "A2", "tr": "voleybol"}, {"category": "09 Sports, Equipment, Body & Health", "word": "tennis", "pos": "noun", "level": "A2", "tr": "tenis"}, {"category": "09 Sports, Equipment, Body & Health", "word": "swimming", "pos": "noun", "level": "A2", "tr": "yüzme"}, {"category": "09 Sports, Equipment, Body & Health", "word": "cycling", "pos": "noun", "level": "A2", "tr": "bisiklet sürme"}, {"category": "09 Sports, Equipment, Body & Health", "word": "running", "pos": "noun", "level": "A2", "tr": "koşu"}, {"category": "09 Sports, Equipment, Body & Health", "word": "athletics", "pos": "noun", "level": "A2", "tr": "atletizm"}, {"category": "09 Sports, Equipment, Body & Health", "word": "gymnastics", "pos": "noun", "level": "A2", "tr": "jimnastik"}, {"category": "09 Sports, Equipment, Body & Health", "word": "yoga", "pos": "noun", "level": "A2", "tr": "yoga"}, {"category": "09 Sports, Equipment, Body & Health", "word": "helmet", "pos": "noun", "level": "A2", "tr": "kask"}, {"category": "09 Sports, Equipment, Body & Health", "word": "racket", "pos": "noun", "level": "A2", "tr": "raket"}, {"category": "09 Sports, Equipment, Body & Health", "word": "bat", "pos": "noun", "level": "A2", "tr": "sopa / beyzbol sopası"}, {"category": "09 Sports, Equipment, Body & Health", "word": "net", "pos": "noun", "level": "A2", "tr": "file"}, {"category": "09 Sports, Equipment, Body & Health", "word": "trainers", "pos": "noun", "level": "A2", "tr": "spor ayakkabı"}, {"category": "09 Sports, Equipment, Body & Health", "word": "gloves", "pos": "noun", "level": "A2", "tr": "eldiven"}, {"category": "09 Sports, Equipment, Body & Health", "word": "knee", "pos": "noun", "level": "A2", "tr": "diz"}, {"category": "09 Sports, Equipment, Body & Health", "word": "elbow", "pos": "noun", "level": "A2", "tr": "dirsek"}, {"category": "09 Sports, Equipment, Body & Health", "word": "shoulder", "pos": "noun", "level": "A2", "tr": "omuz"}, {"category": "09 Sports, Equipment, Body & Health", "word": "ankle", "pos": "noun", "level": "A2", "tr": "ayak bileği"}, {"category": "09 Sports, Equipment, Body & Health", "word": "wrist", "pos": "noun", "level": "A2", "tr": "el bileği"}, {"category": "09 Sports, Equipment, Body & Health", "word": "back", "pos": "noun", "level": "A2", "tr": "sırt"}, {"category": "09 Sports, Equipment, Body & Health", "word": "stomach", "pos": "noun", "level": "A2", "tr": "mide / karın"}, {"category": "09 Sports, Equipment, Body & Health", "word": "throat", "pos": "noun", "level": "A2", "tr": "boğaz"}, {"category": "09 Sports, Equipment, Body & Health", "word": "headache", "pos": "noun", "level": "A2", "tr": "baş ağrısı"}, {"category": "09 Sports, Equipment, Body & Health", "word": "cough", "pos": "noun/verb", "level": "A2", "tr": "öksürük / öksürmek"}, {"category": "09 Sports, Equipment, Body & Health", "word": "temperature", "pos": "noun", "level": "A2", "tr": "ateş"}, {"category": "09 Sports, Equipment, Body & Health", "word": "medicine", "pos": "noun", "level": "A2", "tr": "ilaç"}, {"category": "09 Sports, Equipment, Body & Health", "word": "dentist", "pos": "noun", "level": "A2", "tr": "diş doktoru"}, {"category": "09 Sports, Equipment, Body & Health", "word": "appointment", "pos": "noun", "level": "A2", "tr": "randevu"}, {"category": "09 Sports, Equipment, Body & Health", "word": "fit", "pos": "adjective", "level": "A2", "tr": "formda"}, {"category": "09 Sports, Equipment, Body & Health", "word": "healthy", "pos": "adjective", "level": "A2", "tr": "sağlıklı"}, {"category": "09 Sports, Equipment, Body & Health", "word": "unhealthy", "pos": "adjective", "level": "A2", "tr": "sağlıksız"}, {"category": "09 Sports, Equipment, Body & Health", "word": "injury", "pos": "noun", "level": "A2", "tr": "sakatlık"}, {"category": "09 Sports, Equipment, Body & Health", "word": "pain", "pos": "noun", "level": "A2", "tr": "ağrı"}, {"category": "10 Nature, Animals & Environment", "word": "mountain", "pos": "noun", "level": "A2", "tr": "dağ"}, {"category": "10 Nature, Animals & Environment", "word": "river", "pos": "noun", "level": "A2", "tr": "nehir"}, {"category": "10 Nature, Animals & Environment", "word": "lake", "pos": "noun", "level": "A2", "tr": "göl"}, {"category": "10 Nature, Animals & Environment", "word": "island", "pos": "noun", "level": "A2", "tr": "ada"}, {"category": "10 Nature, Animals & Environment", "word": "desert", "pos": "noun", "level": "A2", "tr": "çöl"}, {"category": "10 Nature, Animals & Environment", "word": "forest", "pos": "noun", "level": "A2", "tr": "orman"}, {"category": "10 Nature, Animals & Environment", "word": "waterfall", "pos": "noun", "level": "A2", "tr": "şelale"}, {"category": "10 Nature, Animals & Environment", "word": "beach", "pos": "noun", "level": "A2", "tr": "plaj"}, {"category": "10 Nature, Animals & Environment", "word": "cave", "pos": "noun", "level": "A2", "tr": "mağara"}, {"category": "10 Nature, Animals & Environment", "word": "field", "pos": "noun", "level": "A2", "tr": "tarla / alan"}, {"category": "10 Nature, Animals & Environment", "word": "ocean", "pos": "noun", "level": "A2", "tr": "okyanus"}, {"category": "10 Nature, Animals & Environment", "word": "coast", "pos": "noun", "level": "A2", "tr": "sahil"}, {"category": "10 Nature, Animals & Environment", "word": "hill", "pos": "noun", "level": "A2", "tr": "tepe"}, {"category": "10 Nature, Animals & Environment", "word": "valley", "pos": "noun", "level": "A2", "tr": "vadi"}, {"category": "10 Nature, Animals & Environment", "word": "wild", "pos": "adjective", "level": "A2", "tr": "vahşi"}, {"category": "10 Nature, Animals & Environment", "word": "endangered", "pos": "adjective", "level": "A2", "tr": "nesli tehlikede"}, {"category": "10 Nature, Animals & Environment", "word": "insect", "pos": "noun", "level": "A2", "tr": "böcek"}, {"category": "10 Nature, Animals & Environment", "word": "feather", "pos": "noun", "level": "A2", "tr": "tüy"}, {"category": "10 Nature, Animals & Environment", "word": "wing", "pos": "noun", "level": "A2", "tr": "kanat"}, {"category": "10 Nature, Animals & Environment", "word": "claw", "pos": "noun", "level": "A2", "tr": "pençe"}, {"category": "10 Nature, Animals & Environment", "word": "tail", "pos": "noun", "level": "A2", "tr": "kuyruk"}, {"category": "10 Nature, Animals & Environment", "word": "fur", "pos": "noun", "level": "A2", "tr": "kürk / tüy"}, {"category": "10 Nature, Animals & Environment", "word": "scales", "pos": "noun", "level": "A2", "tr": "pullar"}, {"category": "10 Nature, Animals & Environment", "word": "beak", "pos": "noun", "level": "A2", "tr": "gaga"}, {"category": "10 Nature, Animals & Environment", "word": "paw", "pos": "noun", "level": "A2", "tr": "pati"}, {"category": "10 Nature, Animals & Environment", "word": "environment", "pos": "noun", "level": "A2", "tr": "çevre"}, {"category": "10 Nature, Animals & Environment", "word": "pollution", "pos": "noun", "level": "A2", "tr": "kirlilik"}, {"category": "10 Nature, Animals & Environment", "word": "recycle", "pos": "verb", "level": "A2", "tr": "geri dönüştürmek"}, {"category": "10 Nature, Animals & Environment", "word": "save water", "pos": "verb phrase", "level": "B1", "tr": "su tasarrufu yapmak"}, {"category": "10 Nature, Animals & Environment", "word": "protect", "pos": "verb", "level": "A2", "tr": "korumak"}, {"category": "10 Nature, Animals & Environment", "word": "planet", "pos": "noun", "level": "A2", "tr": "gezegen"}, {"category": "10 Nature, Animals & Environment", "word": "climate", "pos": "noun", "level": "A2", "tr": "iklim"}, {"category": "10 Nature, Animals & Environment", "word": "rubbish", "pos": "noun", "level": "A2", "tr": "çöp"}, {"category": "10 Nature, Animals & Environment", "word": "plastic", "pos": "noun", "level": "A2", "tr": "plastik"}, {"category": "10 Nature, Animals & Environment", "word": "natural", "pos": "adjective", "level": "A2", "tr": "doğal"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "distraction", "pos": "noun", "level": "B1", "tr": "dikkat dağıtıcı şey"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "deadline", "pos": "noun", "level": "B1", "tr": "son teslim tarihi"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "schedule", "pos": "noun", "level": "B1", "tr": "program"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "priority", "pos": "noun", "level": "B1", "tr": "öncelik"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "goal", "pos": "noun", "level": "B1", "tr": "hedef"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "plan ahead", "pos": "verb phrase", "level": "B1", "tr": "önceden planlamak"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "avoid", "pos": "verb", "level": "B1", "tr": "kaçınmak"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "manage", "pos": "verb", "level": "B1", "tr": "yönetmek"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "stress", "pos": "noun", "level": "B1", "tr": "stres"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "teamwork", "pos": "noun", "level": "B1", "tr": "takım çalışması"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "responsibility", "pos": "noun", "level": "B1", "tr": "sorumluluk"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "role", "pos": "noun", "level": "B1", "tr": "rol"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "safe", "pos": "adjective", "level": "B1", "tr": "güvenli"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "private", "pos": "adjective", "level": "B1", "tr": "özel / gizli"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "personal information", "pos": "noun phrase", "level": "B1", "tr": "kişisel bilgi"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "message", "pos": "noun", "level": "B1", "tr": "mesaj"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "stranger", "pos": "noun", "level": "B1", "tr": "yabancı"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "mistake", "pos": "noun", "level": "B1", "tr": "hata"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "solution", "pos": "noun", "level": "B1", "tr": "çözüm"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "advice", "pos": "noun", "level": "B1", "tr": "tavsiye"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "warning", "pos": "noun", "level": "B1", "tr": "uyarı"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "password", "pos": "noun", "level": "B1", "tr": "şifre"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "share", "pos": "verb", "level": "B1", "tr": "paylaşmak"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "trust", "pos": "verb/noun", "level": "B1", "tr": "güvenmek / güven"}, {"category": "Life Skills, Exam Skills & Internet Safety", "word": "report", "pos": "verb", "level": "B1", "tr": "bildirmek / rapor etmek"}];
+
+    const tableBody = document.getElementById("vocabTable");
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const levelFilter = document.getElementById("levelFilter");
+    const visibleWords = document.getElementById("visibleWords");
+    const learnedCount = document.getElementById("learnedCount");
+    const b1Count = document.getElementById("b1Count");
+    const categoryList = document.getElementById("categoryList");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+
+    let currentFlash = null;
+    let quizData = [];
+
+    function storageKey(word) {
+      return "a2b1-vocab-learned-" + word;
+    }
+
+    function isLearned(word) {
+      return localStorage.getItem(storageKey(word)) === "true";
+    }
+
+    function setLearned(word, value) {
+      localStorage.setItem(storageKey(word), value ? "true" : "false");
+    }
+
+    function init() {
+      const categories = [...new Set(vocab.map(v => v.category))];
+      categories.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        categoryFilter.appendChild(option);
+      });
+
+      categoryList.innerHTML = categories.map(cat => {
+        const count = vocab.filter(v => v.category === cat).length;
+        return `<li><strong>${cat}</strong> — ${count} items</li>`;
+      }).join("");
+
+      b1Count.textContent = vocab.filter(v => v.level === "B1").length;
+      renderTable();
+      buildQuiz();
+      newCard();
+    }
+
+    function renderTable() {
+      const query = searchInput.value.toLowerCase().trim();
+      const cat = categoryFilter.value;
+      const level = levelFilter.value;
+
+      const filtered = vocab.filter(v => {
+        const text = `${v.word} ${v.pos} ${v.level} ${v.tr} ${v.category}`.toLowerCase();
+        return text.includes(query) &&
+          (cat === "all" || v.category === cat) &&
+          (level === "all" || v.level === level);
+      });
+
+      visibleWords.textContent = filtered.length;
+
+      tableBody.innerHTML = filtered.map(v => `
+        <tr>
+          <td class="no-print">
+            <input type="checkbox" ${isLearned(v.word) ? "checked" : ""}
+              onchange="setLearned('${escapeAttr(v.word)}', this.checked); updateProgress();" />
+          </td>
+          <td><strong>${v.word}</strong></td>
+          <td><span class="pill pos">${v.pos}</span></td>
+          <td><span class="pill ${v.level === "B1" ? "b1" : ""}">${v.level}</span></td>
+          <td>${v.tr}</td>
+          <td>${v.category}</td>
+        </tr>
+      `).join("");
+
+      updateProgress();
+    }
+
+    function escapeAttr(str) {
+      return String(str).replace(/'/g, "\\'").replace(/"/g, "&quot;");
+    }
+
+    function updateProgress() {
+      const learned = vocab.filter(v => isLearned(v.word)).length;
+      const percent = Math.round((learned / vocab.length) * 100);
+      learnedCount.textContent = learned;
+      progressFill.style.width = percent + "%";
+      progressText.textContent = percent + "%";
+    }
+
+    function sample(arr, n) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy.slice(0, n);
+    }
+
+    function newCard() {
+      currentFlash = vocab[Math.floor(Math.random() * vocab.length)];
+      document.getElementById("flashWord").textContent = currentFlash.word;
+      document.getElementById("flashMeta").textContent = `${currentFlash.category} · ${currentFlash.pos} · ${currentFlash.level}`;
+      const meaning = document.getElementById("flashMeaning");
+      meaning.textContent = currentFlash.tr;
+      meaning.classList.remove("show");
+    }
+
+    function revealMeaning() {
+      document.getElementById("flashMeaning").classList.toggle("show");
+    }
+
+    function markCurrentLearned() {
+      if (!currentFlash) return;
+      setLearned(currentFlash.word, true);
+      updateProgress();
+      renderTable();
+    }
+
+    function buildQuiz() {
+      quizData = sample(vocab, 15);
+      const quizBox = document.getElementById("quizBox");
+
+      quizBox.innerHTML = quizData.map((item, index) => {
+        const wrongs = sample(vocab.filter(v => v.word !== item.word), 3).map(v => v.tr);
+        const options = sample([item.tr, ...wrongs], 4);
+        const optionHtml = options.map(opt => `
+          <label>
+            <input type="radio" name="quiz-${index}" value="${opt}">
+            ${opt}
+          </label>
+        `).join("");
+
+        item.correctOption = item.tr;
+
+        return `
+          <div class="question">
+            <strong>${index + 1}.</strong> What does <strong>${item.word}</strong> mean?
+            <div class="quiz-options">${optionHtml}</div>
+            <small>${item.category} · ${item.level}</small>
+          </div>
+        `;
+      }).join("");
+
+      document.getElementById("quizScore").textContent = "Quiz score will appear here.";
+    }
+
+    function checkQuiz() {
+      let score = 0;
+      quizData.forEach((item, index) => {
+        const chosen = document.querySelector(`input[name="quiz-${index}"]:checked`);
+        if (chosen && chosen.value === item.correctOption) score++;
+      });
+
+      const percent = Math.round((score / quizData.length) * 100);
+      let message = "Review needed.";
+      if (percent >= 85) message = "Excellent. Final-exam vocabulary is strong.";
+      else if (percent >= 70) message = "Good. Review weak categories.";
+      else if (percent >= 50) message = "Basic control. More revision needed.";
+      else message = "Not exam-ready yet. Repeat topic by topic.";
+
+      document.getElementById("quizScore").textContent = `${score}/${quizData.length} correct — ${percent}% — ${message}`;
+    }
+
+    searchInput.addEventListener("input", renderTable);
+    categoryFilter.addEventListener("change", renderTable);
+    levelFilter.addEventListener("change", renderTable);
+
+    init();
+  </script>
+</body>
+</html>
